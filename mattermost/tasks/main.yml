@@ -1,33 +1,43 @@
 ---
 # tasks file for mattermost
-- name: downloading the latest package
-  ansible.builtin.get_url:
-    url: https://releases.mattermost.com/7.5.2/mattermost-7.5.2-linux-amd64.tar.gz
-    dest: mattermost-7.5.2-linux-amd64.tar.gz
-
 - name: Adding mattermost user
-  ansible.builtin.add_user:
+  ansible.builtin.user:
     name: mattermost
+    state: present
+    group: mattermost
+    system: true
+    append: true
 
 - name: Creating required dirctories
   ansible.builtin.file:
-    path: "{{ item.path }}"
+    path: "{{ item }}"
     state: directory
     owner: mattermost
     group: mattermost
     mode: g+w
   loop: "{{ directory }}"
 
+- name: downloading the latest package
+  ansible.builtin.get_url:
+    url: https://releases.mattermost.com/7.5.2/mattermost-7.5.2-linux-amd64.tar.gz
+    dest: /root
+
 - name: Extracting tar.gz
   ansible.builtin.unarchive:
-    src: mattermost-7.5.2-linux-amd64.tar.gz
-    dest: /opt/mattermost
+    src: /root/mattermost-7.5.2-linux-amd64.tar.gz
+    dest: /opt
+    remote_src: yes
 
 - name: Creating configuration files and serivce file
   ansible.builtin.template:
     src: "{{ item.src }}"
-    path: "{{ item.path }}"
-    mode: 0644
+    dest: "{{ item.path }}"
+    mode: "{{ item.mode }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+  loop: "{{ template }}"
+
+- ansible.builtin.shell: "restorecon -R /opt/mattermost"
 
 - name: Starting and enabling Service
   ansible.builtin.systemd:
