@@ -1,10 +1,13 @@
 ---
 # vars file for add_users
-team_id: 6sbfx77y7j8btqayzp4c6gcjfr
+team_id: "6sbfx77y7j8btqayzp4c6gcjfr"
 token: ujd1hsym1jycuyzqaiz7ucitww
 
 users:
-- { username: 'asud.khan', first_name: 'Asud', last_name: 'Khan', nickname: 'Asud K', password: 'Welcome123!' }
-- { username: 'asad.chugtai', first_name: 'Asad', last_name: 'Chugtain', nickname: 'Asad C', password: 'Welcome123!' }
-- { username: 'shahid', first_name: 'Shahid', last_name: 'Hussain', nickname: 'Shahid', password: 'Welcome123!' }
-- { username: 'asad', first_name: 'Asad', last_name: 'Akhtar', nickname: 'Asad', password: 'Welcome123!' } 
+# - { username: 'asud.khan', first_name: 'Asud', last_name: 'Khan', nickname: 'Asud K', password: 'Welcome123!' }
+# - { username: 'asad.chugtai', first_name: 'Asad', last_name: 'Chugtain', nickname: 'Asad C', password: 'Welcome123!' }
+# - { username: 'shahid', first_name: 'Shahid', last_name: 'Hussain', nickname: 'Shahid', password: 'Welcome123!' }
+# - { username: 'asad', first_name: 'Asad', last_name: 'Akhtar', nickname: 'Asad', password: 'Welcome123!' } 
+# - { username: 'sultan.saleemi', first_name: 'Sultan', last_name: 'Saleemi', nickname: 'Sultan S', password: 'Welcome123!' } 
+- { username: 'ibrahim', first_name: 'Ibrahim', last_name: 'Ibrahim', nickname: 'Ibrahim I', password: 'Welcome123!' } 
+- { username: 'babar.mirza', first_name: 'Babar', last_name: 'Mirza', nickname: 'Babar M', password: 'Welcome123!' } 
