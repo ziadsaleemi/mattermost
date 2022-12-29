@@ -1,2 +1,9 @@
 ---
 # vars file for mattermost
+directory:
+- /opt/mattermost
+- /opt/mattermost/data
+
+template:
+- { src: mattermost.service.j2, path: /etc/systemd/system/mattermost.service } 
+- { src: config.json.j2, path: /opt/mattermost/config/config.json } 

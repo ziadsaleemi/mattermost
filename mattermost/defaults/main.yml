@@ -1,2 +1,7 @@
 ---
 # defaults file for mattermost
+site_url: http://mattermost.linoop.us
+db_user: root
+db_password: aeiou88
+db_server: 10.0.0.38
+db_name: mattermost_linoop
