@@ -1,0 +1,52 @@
+---
+# tasks file for add_users
+- name: Adding users to mattermost 
+  ansible.builtin.uri:
+    url: https://mattermost.linoop.us/api/v4/users #teams/{{ team_id }}/members
+    method: POST
+    headers:
+      Authorization: Bearer {{ token }}
+      Content-Type: application/json
+    body_format: json
+    body:
+      email: "{{item.username}}@linoop.us"
+      username: "{{ item.username }}"
+      first_name: "{{ item.first_name }}"
+      last_name: "{{ item.last_name }}"
+      nickname: "{{ item.nickname }}"
+      password: Welcome123!
+    return_content: yes
+    status_code: 201,400
+  delegate_to: localhost
+  loop: "{{ users }}"
+
+
+- name: Adding users to mattermost 
+  ansible.builtin.uri:
+    url: https://mattermost.linoop.us/api/v4/users #teams/{{ team_id }}/members
+    method: GET
+    headers:
+      Authorization: Bearer {{ token }}
+      Content-Type: application/json
+    body_format: json
+    return_content: yes
+    status_code: 200
+  delegate_to: localhost
+  register: mm_users
+
+- name: Adding users to mattermost 
+  ansible.builtin.uri:
+    url: https://mattermost.linoop.us/api/v4/teams/{{ team_id }}/members
+    method: POST
+    headers:
+      Authorization: Bearer {{ token }}
+      Content-Type: application/json
+    body_format: json
+    body:
+      team_id: "{{ team_id }}"
+      user_id: "{{ item.id }}"
+      roles: team_user
+    return_content: yes
+    status_code: 201,400
+  delegate_to: localhost
+  loop: "{{ mm_users.json }}"
