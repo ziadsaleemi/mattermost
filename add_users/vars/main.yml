@@ -11,3 +11,5 @@ users:
 # - { username: 'sultan.saleemi', first_name: 'Sultan', last_name: 'Saleemi', nickname: 'Sultan S', password: 'Welcome123!' } 
 - { username: 'ibrahim', first_name: 'Ibrahim', last_name: 'Ibrahim', nickname: 'Ibrahim I', password: 'Welcome123!' } 
 - { username: 'babar.mirza', first_name: 'Babar', last_name: 'Mirza', nickname: 'Babar M', password: 'Welcome123!' } 
+- { username: 'saim.ali', first_name: 'Saim', last_name: 'Ali', nickname: 'Saim A', password: 'Welcome123!' } 
+- { username: 'nasir.ali', first_name: 'Nasir', last_name: 'Ali', nickname: 'Nasir A', password: 'Welcome123!' } 
