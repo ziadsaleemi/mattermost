@@ -1,6 +1,7 @@
 ---
 # vars file for add_users
-team_id: "6sbfx77y7j8btqayzp4c6gcjfr"
+team_id: "kmybcmp143n8x8ibcrrrp3rnma" # leads
+# team_id: "6sbfx77y7j8btqayzp4c6gcjfr" # linoop
 token: ujd1hsym1jycuyzqaiz7ucitww
 
 users:
@@ -9,7 +10,7 @@ users:
 # - { username: 'shahid', first_name: 'Shahid', last_name: 'Hussain', nickname: 'Shahid', password: 'Welcome123!' }
 # - { username: 'asad', first_name: 'Asad', last_name: 'Akhtar', nickname: 'Asad', password: 'Welcome123!' } 
 # - { username: 'sultan.saleemi', first_name: 'Sultan', last_name: 'Saleemi', nickname: 'Sultan S', password: 'Welcome123!' } 
-- { username: 'ibrahim', first_name: 'Ibrahim', last_name: 'Ibrahim', nickname: 'Ibrahim I', password: 'Welcome123!' } 
-- { username: 'babar.mirza', first_name: 'Babar', last_name: 'Mirza', nickname: 'Babar M', password: 'Welcome123!' } 
-- { username: 'saim.ali', first_name: 'Saim', last_name: 'Ali', nickname: 'Saim A', password: 'Welcome123!' } 
-- { username: 'nasir.ali', first_name: 'Nasir', last_name: 'Ali', nickname: 'Nasir A', password: 'Welcome123!' } 
+# - { username: 'ibrahim', first_name: 'Ibrahim', last_name: 'Ibrahim', nickname: 'Ibrahim I', password: 'Welcome123!' } 
+# - { username: 'babar.mirza', first_name: 'Babar', last_name: 'Mirza', nickname: 'Babar M', password: 'Welcome123!' } 
+# - { username: 'saim.ali', first_name: 'Saim', last_name: 'Ali', nickname: 'Saim A', password: 'Welcome123!' } 
+# - { username: 'nasir.ali', first_name: 'Nasir', last_name: 'Ali', nickname: 'Nasir A', password: 'Welcome123!' } 
