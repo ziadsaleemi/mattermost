@@ -16,7 +16,7 @@
 - debug: 
     var: posts_id.json.order
 
-- name: Adding users to Mattermost Channel
+- name: Removing posts from Mattermost Channel
   ansible.builtin.uri:
     url: https://mattermost.linoop.us/api/v4/posts/{{ item }}
     method: DELETE
@@ -31,9 +31,6 @@
 
 - name: Use connect_params to add any additional connection parameters that libpg supports
   community.postgresql.postgresql_query:
-    connect_params:
-      target_session_attrs: read-write
-      connect_timeout: 10
     login_host: "10.0.0.38"
     login_user: "root"
     login_password: "aeiou88"
