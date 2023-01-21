@@ -1,6 +1,0 @@
----
-- hosts: localhost
-  gather_facts: false
-  roles:
-    # - add_users
-    - remove_posts
