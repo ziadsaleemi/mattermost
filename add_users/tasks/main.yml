@@ -9,11 +9,11 @@
       Content-Type: application/json
     body_format: json
     body:
-      email: "{{item.username}}@linoop.us"
-      username: "{{ item.username }}"
-      first_name: "{{ item.first_name }}"
-      last_name: "{{ item.last_name }}"
-      nickname: "{{ item.nickname }}"
+      email: "{{item.email}}"
+      username: "{{ item.name }}"
+      first_name: "{{ item.firstname }}"
+      last_name: "{{ item.surname }}"
+      nickname: "{{ item.firstname }} {{ item.surname }}"
       password: Welcome123!
     return_content: yes
     status_code: 201,400
