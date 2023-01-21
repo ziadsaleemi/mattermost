@@ -28,3 +28,14 @@
     status_code: 200
   delegate_to: localhost
   loop: "{{ posts_id.json.order }}"
+
+- name: Use connect_params to add any additional connection parameters that libpg supports
+  community.postgresql.postgresql_query:
+    connect_params:
+      target_session_attrs: read-write
+      connect_timeout: 10
+    login_host: "10.0.0.38"
+    login_user: "root"
+    login_password: "aeiou88"
+    db: 'mattermost_linoop'
+    query: delete from posts where channelid='yeofhjfuitfjjpspes3ysght7c'

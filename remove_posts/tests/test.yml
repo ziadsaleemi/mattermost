@@ -1,5 +1,25 @@
 ---
 - hosts: localhost
-  remote_user: root
-  roles:
-    - remove_posts
+  gather_facts: false
+  tasks:
+#   remote_user: root
+#   roles:
+#     - remove_posts
+  # - name: Use connect_params to add any additional connection parameters that libpg supports
+  #   community.postgresql.postgresql_query:
+  #     connect_params:
+  #       target_session_attrs: read-write
+  #       connect_timeout: 10
+  #     login_host: "10.0.0.38"
+  #     login_user: "root"
+  #     login_password: "aeiou88"
+  #     db: 'mattermost_linoop'
+  #     query: delete from posts where channelid='yeofhjfuitfjjpspes3ysght7c'
+
+  # - name: Create tbl2 in the acme database with the DDL like tbl1 with testuser as an owner
+  #   community.postgresql.postgresql_info:
+  #     login_host: "10.0.0.38"
+  #     login_user: "root"
+  #     login_password: "aeiou88"
+  #     db: 'mattermost_linoop'
+      # filter: p*
