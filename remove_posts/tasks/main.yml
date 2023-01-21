@@ -1,0 +1,30 @@
+---
+# tasks file for remove_posts
+- name: Getting ID's of all the posts
+  ansible.builtin.uri:
+    url: https://mattermost.linoop.us/api/v4/channels/{{ channel_id }}/posts
+    method: GET
+    headers:
+      Authorization: Bearer {{ token }}
+      Content-Type: application/json
+    body_format: json
+    return_content: yes
+    status_code: 200
+  delegate_to: localhost
+  register: posts_id
+
+- debug: 
+    var: posts_id.json.order
+
+- name: Adding users to Mattermost Channel
+  ansible.builtin.uri:
+    url: https://mattermost.linoop.us/api/v4/posts/{{ item }}
+    method: DELETE
+    headers:
+      Authorization: Bearer {{ token }}
+      Content-Type: application/json
+    body_format: json
+    return_content: yes
+    status_code: 200
+  delegate_to: localhost
+  loop: "{{ posts_id.json.order }}"

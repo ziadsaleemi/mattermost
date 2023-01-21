@@ -1,4 +1,6 @@
 ---
-- hosts: all
+- hosts: localhost
+  gather_facts: false
   roles:
-    - add_users
+    # - add_users
+    - remove_posts
