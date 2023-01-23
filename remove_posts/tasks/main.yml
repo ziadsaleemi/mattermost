@@ -2,7 +2,7 @@
 # tasks file for remove_posts
 - name: Getting ID's of all the posts
   ansible.builtin.uri:
-    url: https://mattermost.linoop.us/api/v4/channels/{{ channel_id }}/posts
+    url: "{{ baseurl }}"/api/v4/channels/{{ channel_id }}/posts
     method: GET
     headers:
       Authorization: Bearer {{ token }}
@@ -18,7 +18,7 @@
 
 - name: Removing posts from Mattermost Channel
   ansible.builtin.uri:
-    url: https://mattermost.linoop.us/api/v4/posts/{{ item }}
+    url: "{{ baseurl }}"/api/v4/posts/{{ item }}
     method: DELETE
     headers:
       Authorization: Bearer {{ token }}
@@ -29,10 +29,10 @@
   delegate_to: localhost
   loop: "{{ posts_id.json.order }}"
 
-- name: Use connect_params to add any additional connection parameters that libpg supports
-  community.postgresql.postgresql_query:
-    login_host: "10.0.0.38"
-    login_user: "root"
-    login_password: "aeiou88"
-    db: 'mattermost_linoop'
-    query: delete from posts where channelid='yeofhjfuitfjjpspes3ysght7c'
+# - name: Use connect_params to add any additional connection parameters that libpg supports
+#   community.postgresql.postgresql_query:
+#     login_host: "10.0.0.38"
+#     login_user: "root"
+#     login_password: "aeiou88"
+#     db: 'mattermost_linoop'
+#     query: delete from posts where channelid='yeofhjfuitfjjpspes3ysght7c'
