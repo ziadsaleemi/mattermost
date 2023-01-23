@@ -2,7 +2,7 @@
 # tasks file for add_users
 - name: Adding users to mattermost 
   ansible.builtin.uri:
-    url: https://mattermost.linoop.us/api/v4/users
+    url: "{{ baseurl }}/api/v4/users"
     method: POST
     headers:
       Authorization: Bearer {{ token }}
@@ -22,7 +22,7 @@
 
 - name: Getting ID's of all the users
   ansible.builtin.uri:
-    url: https://mattermost.linoop.us/api/v4/users
+    url: "{{ baseurl }}/api/v4/users"
     method: GET
     headers:
       Authorization: Bearer {{ token }}
@@ -35,7 +35,7 @@
 
 - name: Adding users to Mattermost Channel
   ansible.builtin.uri:
-    url: https://mattermost.linoop.us/api/v4/teams/{{ team_id }}/members
+    url: "{{ baseurl }}/api/v4/teams/{{ team_id }}/members"
     method: POST
     headers:
       Authorization: Bearer {{ token }}
