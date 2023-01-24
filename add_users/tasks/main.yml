@@ -49,3 +49,17 @@
     status_code: 201,400
   delegate_to: localhost
   loop: "{{ mm_users.json }}"
+
+- name: Verify users email
+  ansible.builtin.uri:
+    url: "{{ baseurl }}/api/v4/users/{{ item.id }}/email/verify/member"
+    method: POST
+    headers:
+      Authorization: Bearer {{ token }}
+      Content-Type: application/json
+    body_format: json
+    return_content: yes
+    status_code: 200
+  delegate_to: localhost
+  loop: "{{ mm_users.json }}"
+
